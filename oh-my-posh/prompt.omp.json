@@ -1,0 +1,83 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "final_space": true,
+    "version": 2,
+    "blocks": [
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "segments": [
+                {
+                    "type": "text",
+                    "style": "diamond",
+                    "foreground": "#61AFEF",
+                    "template": "\u256D\u2500",
+                    "properties": {
+                        "always_enabled": true
+                    }
+                },
+                {
+                    "type": "executiontime",
+                    "style": "diamond",
+                    "leading_diamond": "\uE0B6",
+                    "trailing_diamond": "\uE0B0",
+                    "foreground": "#FFFFFF",
+                    "background": "#61AFEF",
+                    "template": " <b>\uFBAB</b> {{ .FormattedMs }} ",
+                    "properties": {
+                        "always_enabled": true
+                    }
+                },
+                {
+                    "type": "text",
+                    "style": "powerline",
+                    "powerline_symbol": "\ue0B0",
+                    "foreground": "#FFFFFF",
+                    "background": "#000000",
+                    "template": " {{ .UserName }}\u0040{{ .HostName }} "
+                },
+                {
+                    "type": "path",
+                    "style": "diamond",
+                    "trailing_diamond": "\uE0B4",
+                    "foreground": "#FFFFFF",
+                    "background": "#FF9248",
+                    "template": " \uF74A {{ .PWD }} ",
+                    "properties": {
+                        "style": "full"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "newline": true,
+            "segments": [
+                {
+                    "type": "text",
+                    "style": "diamond",
+                    "foreground": "#61AFEF",
+                    "template": "\u2570\u2500",
+                    "properties": {
+                        "always_enabled": true
+                    }
+                },
+                {
+                    "type": "text",
+                    "style": "plain",
+                    "newline": true,
+                    "foreground": "#61AFEF",
+                    "template": "{{if .Root}} \u0023 {{else}} \u0024 {{end}}"
+                },
+                {
+                    "type": "text",
+                    "style": "plain",
+                    "newline": true,
+                    "foreground": "#3C873A",
+                    "template": "\u003E\u003E\u003E"
+                }
+            ]
+        }
+    ]
+}
