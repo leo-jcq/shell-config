@@ -6,9 +6,9 @@ shell-config
 ├── bash/
 │   ├── .bashrc
 │   └── .bash_aliases
-├── pws/
-│   └── Microsoft.PowerShell_profile.ps1
 ├── oh-my-posh/
 │   └── prompt.omp.json
+├── pws/
+│   └── Microsoft.PowerShell_profile.ps1
 └── README.md
 ```
