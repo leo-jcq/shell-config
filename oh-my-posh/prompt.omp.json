@@ -3,7 +3,6 @@
     "final_space": false,
     "version": 2,
     "console_title_template": "{{.Folder}}{{if .Root}} \u0023 {{else}} \u0024 {{end}}",
-    "terminal_background": "#282C34",
     "blocks": [
         {
             "type": "prompt",
@@ -41,7 +40,7 @@
                 {
                     "type": "git",
                     "style": "powerline",
-                    "powerline_symbol": "\ue0b0",
+                    "powerline_symbol": "\ue0B0",
                     "foreground": "#193549",
                     "background": "#95FFA4",
                     "properties": {
