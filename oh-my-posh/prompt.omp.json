@@ -2,6 +2,8 @@
     "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
     "final_space": false,
     "version": 2,
+    "console_title_template": "{{.Folder}}{{if .Root}} \u0023 {{else}} \u0024 {{end}}",
+    "terminal_background": "#282C34",
     "blocks": [
         {
             "type": "prompt",
@@ -65,29 +67,29 @@
         {
             "alignment": "right",
             "segments": [
-              {
-                "properties": {
-                  "root_icon": "\uf292 "
+                {
+                    "properties": {
+                        "root_icon": "\uf292 "
+                    },
+                    "style": "diamond",
+                    "template": " \uf0e7 ",
+                    "type": "root"
                 },
-                "style": "diamond",
-                "template": " \uf0e7 ",
-                "type": "root"
-              },
-              {
-                "foreground": "#94ffa2",
-                "style": "diamond",
-                "template": " <#ffffff>CPU:</> {{ round .PhysicalPercentUsed .Precision }}% ",
-                "type": "sysinfo"
-              },
-              {
-                "foreground": "#81ff91",
-                "style": "diamond",
-                "template": "<#ffffff>\uf6dc</> <#ffffff>RAM:</> {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB ",
-                "type": "sysinfo"
-              }
+                {
+                    "foreground": "#94ffa2",
+                    "style": "diamond",
+                    "template": " <#ffffff>CPU:</> {{ round .PhysicalPercentUsed .Precision }}% ",
+                    "type": "sysinfo"
+                },
+                {
+                    "foreground": "#81ff91",
+                    "style": "diamond",
+                    "template": "<#ffffff>\uf6dc</> <#ffffff>RAM:</> {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB ",
+                    "type": "sysinfo"
+                }
             ],
             "type": "prompt"
-          },
+        },
         {
             "type": "prompt",
             "alignment": "left",
