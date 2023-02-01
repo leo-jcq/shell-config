@@ -1,6 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-    "final_space": true,
+    "final_space": false,
     "version": 2,
     "blocks": [
         {
@@ -9,8 +9,8 @@
             "segments": [
                 {
                     "type": "text",
-                    "style": "diamond",
-                    "foreground": "#0077c2",
+                    "style": "plain",
+                    "foreground": "#0077C2",
                     "template": "\u256D\u2500",
                     "properties": {
                         "always_enabled": true
@@ -22,7 +22,7 @@
                     "leading_diamond": "\uE0B6",
                     "trailing_diamond": "\uE0B0",
                     "foreground": "#FFFFFF",
-                    "background": "#0077c2",
+                    "background": "#0077C2",
                     "template": " <b>\uFBAB</b> {{ .FormattedMs }} ",
                     "properties": {
                         "always_enabled": true
@@ -32,9 +32,22 @@
                     "type": "text",
                     "style": "powerline",
                     "powerline_symbol": "\ue0B0",
-                    "foreground": "#011627",
-                    "background": "#FFFB38",
+                    "foreground": "#3A86FF",
+                    "background": "#242424",
                     "template": " {{ .UserName }}\u0040{{ .HostName }} "
+                },
+                {
+                    "type": "git",
+                    "style": "powerline",
+                    "powerline_symbol": "\ue0b0",
+                    "foreground": "#193549",
+                    "background": "#95FFA4",
+                    "properties": {
+                        "fetch_stash_count": true,
+                        "fetch_status": true,
+                        "fetch_upstream_icon": true
+                    },
+                    "template": " {{ .UpstreamIcon }}{{ .HEAD }} "
                 },
                 {
                     "type": "path",
@@ -50,6 +63,32 @@
             ]
         },
         {
+            "alignment": "right",
+            "segments": [
+              {
+                "properties": {
+                  "root_icon": "\uf292 "
+                },
+                "style": "diamond",
+                "template": " \uf0e7 ",
+                "type": "root"
+              },
+              {
+                "foreground": "#94ffa2",
+                "style": "diamond",
+                "template": " <#ffffff>CPU:</> {{ round .PhysicalPercentUsed .Precision }}% ",
+                "type": "sysinfo"
+              },
+              {
+                "foreground": "#81ff91",
+                "style": "diamond",
+                "template": "<#ffffff>\uf6dc</> <#ffffff>RAM:</> {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB ",
+                "type": "sysinfo"
+              }
+            ],
+            "type": "prompt"
+          },
+        {
             "type": "prompt",
             "alignment": "left",
             "newline": true,
@@ -57,7 +96,7 @@
                 {
                     "type": "text",
                     "style": "diamond",
-                    "foreground": "#6CA35E",
+                    "foreground": "#21C7C7",
                     "template": "\u2570\u2500",
                     "properties": {
                         "always_enabled": true
@@ -67,15 +106,8 @@
                     "type": "text",
                     "style": "plain",
                     "newline": true,
-                    "foreground": "#6CA35E",
-                    "template": "{{if .Root}} \u0023 {{else}} \u0024 {{end}}"
-                },
-                {
-                    "type": "text",
-                    "style": "plain",
-                    "newline": true,
-                    "foreground": "#3C873A",
-                    "template": "\u003E\u003E\u003E"
+                    "foreground": "#e0f8ff",
+                    "template": "\ue285{{if .Root}} \u0023 {{else}} \u0024 {{end}}"
                 }
             ]
         }
