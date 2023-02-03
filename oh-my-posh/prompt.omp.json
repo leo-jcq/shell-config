@@ -68,23 +68,26 @@
             "segments": [
                 {
                     "properties": {
-                        "root_icon": "\uf292 "
+                        "root_icon": "\uF292 "
                     },
                     "style": "diamond",
-                    "template": " \uf0e7 ",
+                    "template": " \uF0E7 ",
                     "type": "root"
                 },
                 {
-                    "foreground": "#94ffa2",
+                    "type": "sysinfo",
                     "style": "diamond",
-                    "template": " <#ffffff>CPU:</> {{ round .PhysicalPercentUsed .Precision }}% ",
-                    "type": "sysinfo"
+                    "foreground": "#94DDA2",
+                    "foreground_templates": [
+                        "{{ if (gt .PhysicalPercentUsed 80) }}#FF4B4B{{ else if (gt .PhysicalPercentUsed 60) }}#FF9248{{ else }}#94DDA2{{ end }}"
+                    ],
+                    "template": " <#FFFFFF>CPU:</> {{ round .PhysicalPercentUsed .Precision }}% "
                 },
                 {
-                    "foreground": "#81ff91",
+                    "type": "sysinfo",
                     "style": "diamond",
-                    "template": "<#ffffff>\uf6dc</> <#ffffff>RAM:</> {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB ",
-                    "type": "sysinfo"
+                    "foreground": "#94DDA2",
+                    "template": "<#FFFFFF>\uf6dc</> <#FFFFFF>RAM:</> {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB "
                 }
             ],
             "type": "prompt"
