@@ -7,17 +7,11 @@
                 {
                     "background": "#0077c2",
                     "foreground": "#ffffff",
+                    "background_templates": ["{{if .Root}}#ef5350{{else}}#0077c2{{end}}"],
                     "leading_diamond": "\u256d\u2500\ue0b6",
                     "style": "diamond",
                     "template": "{{if .Root}}\u0023{{else}}\u0024{{end}} {{ .UserName }}\u0040{{ .HostName }} ",
                     "type": "session"
-                },
-                {
-                    "background": "#ef5350",
-                    "foreground": "#FFFB38",
-                    "style": "diamond",
-                    "template": "<parentBackground>\ue0b0</> \uf292 ",
-                    "type": "root"
                 },
                 {
                     "background": "#FF9248",
@@ -33,7 +27,6 @@
                 {
                     "background": "#95FFA4",
                     "foreground": "#193549",
-
                     "powerline_symbol": "\ue0b0",
                     "properties": {
                         "fetch_stash_count": true,
@@ -45,13 +38,31 @@
                     "type": "git"
                 },
                 {
+                    "background": "#ffeb3b",
+                    "foreground": "#193549",
+                    "background_templates": [
+                        "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
+                        "{{if eq \"Discharging\" .State.String}}#ffeb95{{end}}",
+                        "{{if eq \"Full\" .State.String}}#4caf50{{end}}"
+                    ],
+                    "powerline_symbol": "\uE0B0",
+                    "properties": {
+                        "discharging_icon": "\uE231 ",
+                        "charging_icon": "\uE234 ",
+                        "charged_icon": "\uE22F "
+                    },
+                    "style": "powerline",
+                    "template": " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}\uF295 ",
+                    "type": "battery"
+                },
+                {
                     "background": "#83769c",
                     "foreground": "#ffffff",
                     "properties": {
                         "always_enabled": true
                     },
                     "style": "diamond",
-                    "template": " \ufa1e {{ .FormattedMs }} ",
+                    "template": " \ufa1e {{ .FormattedMs }}\u2000\u2800",
                     "trailing_diamond": "\ue0b4",
                     "type": "executiontime"
                 }
