@@ -17,11 +17,6 @@
                     "background": "#4caf50",
                     "foreground": "#193549",
                     "powerline_symbol": "\uE0B0",
-                    "properties": {
-                        "mapped_shell_names": {
-                            "pwsh": "ps"
-                        }
-                    },
                     "style": "powerline",
                     "template": " \uf120 {{ .Name }} ",
                     "type": "shell"
