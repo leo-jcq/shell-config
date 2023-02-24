@@ -14,6 +14,19 @@
                     "type": "session"
                 },
                 {
+                    "background": "#4caf50",
+                    "foreground": "#193549",
+                    "powerline_symbol": "\uE0B0",
+                    "properties": {
+                        "mapped_shell_names": {
+                            "pwsh": "ps"
+                        }
+                    },
+                    "style": "powerline",
+                    "template": " \uf120 {{ .Name }} ",
+                    "type": "shell"
+                },
+                {
                     "background": "#FF9248",
                     "foreground": "#2d3436",
                     "powerline_symbol": "\ue0b0",
@@ -27,33 +40,17 @@
                 {
                     "background": "#95FFA4",
                     "foreground": "#193549",
+                    "background_templates": [
+                        "{{ if or (.Working.Changed) (.Staging.Changed) }}#FFEB95{{ end }}"
+                    ],
                     "powerline_symbol": "\ue0b0",
                     "properties": {
-                        "fetch_stash_count": true,
                         "fetch_status": true,
                         "fetch_upstream_icon": true
                     },
                     "style": "powerline",
                     "template": " {{ .UpstreamIcon }}{{ .HEAD }} ",
                     "type": "git"
-                },
-                {
-                    "background": "#ffeb3b",
-                    "foreground": "#193549",
-                    "background_templates": [
-                        "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
-                        "{{if eq \"Discharging\" .State.String}}#ffeb95{{end}}",
-                        "{{if eq \"Full\" .State.String}}#4caf50{{end}}"
-                    ],
-                    "powerline_symbol": "\uE0B0",
-                    "properties": {
-                        "discharging_icon": "\uE231 ",
-                        "charging_icon": "\uE234 ",
-                        "charged_icon": "\uE22F "
-                    },
-                    "style": "powerline",
-                    "template": " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}\uF295 ",
-                    "type": "battery"
                 },
                 {
                     "background": "#83769c",
