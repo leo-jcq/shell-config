@@ -7,7 +7,7 @@
                 {
                     "background": "#0077c2",
                     "foreground": "#ffffff",
-                    "background_templates": ["{{if .Root}}#ef5350{{else}}#0077c2{{end}}"],
+                    "background_templates": ["{{if .Root}}#ef5350{{end}}"],
                     "leading_diamond": "\u256d\u2500\ue0b6",
                     "style": "diamond",
                     "template": "{{if .Root}}\u0023{{else}}\u0024{{end}} {{ .UserName }}\u0040{{ .HostName }} ",
