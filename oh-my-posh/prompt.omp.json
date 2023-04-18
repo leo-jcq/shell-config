@@ -16,20 +16,29 @@
                 {
                     "background": "#4caf50",
                     "foreground": "#193549",
-                    "powerline_symbol": "\uE0B0",
+                    "powerline_symbol": "\ue0b0",
                     "style": "powerline",
-                    "template": " \uf120 {{ .Name }} ",
+                    "template": " {{.Icon}}",
+                    "type": "os"
+                },
+                {
+                    "background": "#4caf50",
+                    "foreground": "#193549",
+                    "powerline_symbol": "\ue0b0",
+                    "style": "powerline",
+                    "template": "{{ .Name }} ",
                     "type": "shell"
                 },
                 {
-                    "background": "#FF9248",
+                    "background": "#ef5350",
                     "foreground": "#2d3436",
+                    "background_templates": ["{{ if .Writable }}#FF9248{{end}}"],
                     "powerline_symbol": "\ue0b0",
                     "properties": {
                         "style": "full"
                     },
                     "style": "powerline",
-                    "template": " \uF74A {{ .Path }} ",
+                    "template": " {{if eq \"~\" .Path}}\uf7db{{else}}\uf74a{{end}} {{ .Path }} ",
                     "type": "path"
                 },
                 {
