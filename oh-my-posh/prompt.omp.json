@@ -17,6 +17,11 @@
                     "background": "#4caf50",
                     "foreground": "#193549",
                     "powerline_symbol": "\ue0b0",
+                    "properties": {
+                        "linux": "\ue712",
+                        "macos": "\ue711",
+                        "windows": "\ue70f"
+                    },
                     "style": "powerline",
                     "template": " {{.Icon}}",
                     "type": "os"
