@@ -59,12 +59,12 @@
                         "cherry_pick_icon": "\u2713 ",
                         "commit_icon": "\u25b7 ",
                         "merge_icon": "\u25f4 ",
-                        "no_commits_icon": "[no commits]",
+                        "no_commits_icon": "\u274c",
                         "rebase_icon": "\u2c62 ",
                         "tag_icon": "\u25b6 "
                     },
                     "style": "powerline",
-                    "template": " {{ url .UpstreamIcon .UpstreamURL }}{{ .HEAD }}{{ if and (eq .Ahead 0) (eq .Behind 0) }} \u2261{{end}}{{ if gt .Ahead 0 }} \u2191{{.Ahead}}{{end}}{{ if gt .Behind 0 }} \u2193{{.Behind}}{{end}} {{ if .Working.Changed }}\uf044 +{{ .Working.Added }} ~{{ .Working.Modified }} -{{ .Working.Deleted }} {{ end }} ",
+                    "template": " {{ url .UpstreamIcon .UpstreamURL }}{{ .HEAD }}{{ if and (eq .Ahead 0) (eq .Behind 0) }} \u2261{{end}}{{ if gt .Ahead 0 }} \u2191{{.Ahead}}{{end}}{{ if gt .Behind 0 }} \u2193{{.Behind}}{{end}} {{ if .Working.Changed }}\uf044{{ if gt .Working.Added 0 }} +{{ .Working.Added }}{{ end }}{{ if gt .Working.Modified 0 }} ~{{ .Working.Modified }}{{ end }}{{ if gt .Working.Deleted 0 }} -{{ .Working.Deleted }}{{end }}{{ end }}",
                     "type": "git"
                 },
                 {
@@ -77,6 +77,28 @@
                     "template": " \ufa1e {{ .FormattedMs }}\u2000\u2800",
                     "trailing_diamond": "\ue0b4",
                     "type": "executiontime"
+                }
+            ],
+            "type": "prompt"
+        },
+        {
+            "alignment": "right",
+            "segments": [
+                {
+                    "foreground": "#6ca35e",
+                    "template": "  {{ .Full }} ",
+                    "style": "diamond",
+                    "type": "node"
+                },
+                {
+                    "foreground": "#94ffa2",
+                    "foreground_templates": [
+                        "{{ if gt .PhysicalPercentUsed 85 }}#ef5350{{ end }}",
+                        "{{ if gt .PhysicalPercentUsed 60 }}#ff9248{{ end }}"
+                    ],
+                    "style": "diamond",
+                    "template": " <#ffffff>\ue266</> {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB ",
+                    "type": "sysinfo"
                 }
             ],
             "type": "prompt"
