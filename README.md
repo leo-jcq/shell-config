@@ -1,6 +1,9 @@
 # shell-config
+
 Here are my configurations for the different shells
-## Organization 
+
+## Organization
+
 ```console
 shell-config
 ├── bash/
