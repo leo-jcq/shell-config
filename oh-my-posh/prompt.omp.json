@@ -70,6 +70,14 @@
                     "type": "git"
                 },
                 {
+                    "foreground": "#ffffff",
+                    "background": "#6ca35e",
+                    "powerline_symbol": "\ue0b0",
+                    "template": "  {{ .Full }} ",
+                    "style": "powerline",
+                    "type": "node"
+                },
+                {
                     "background": "#83769c",
                     "foreground": "#ffffff",
                     "properties": {
@@ -79,28 +87,6 @@
                     "template": " \ufa1e {{ .FormattedMs }}\u2000\u2800",
                     "trailing_diamond": "\ue0b4",
                     "type": "executiontime"
-                }
-            ],
-            "type": "prompt"
-        },
-        {
-            "alignment": "right",
-            "segments": [
-                {
-                    "foreground": "#6ca35e",
-                    "template": "  {{ .Full }} ",
-                    "style": "diamond",
-                    "type": "node"
-                },
-                {
-                    "foreground": "#94ffa2",
-                    "foreground_templates": [
-                        "{{ if gt .PhysicalPercentUsed 85 }}#ef5350{{ end }}",
-                        "{{ if gt .PhysicalPercentUsed 60 }}#ff9248{{ end }}"
-                    ],
-                    "style": "diamond",
-                    "template": " <#ffffff>\ue266</> {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB ",
-                    "type": "sysinfo"
                 }
             ],
             "type": "prompt"
