@@ -66,7 +66,7 @@
                         "tag_icon": "\u25b6 "
                     },
                     "style": "powerline",
-                    "template": " {{ url .UpstreamIcon .UpstreamURL }} {{ .HEAD }}{{ if and (eq .Ahead 0) (eq .Behind 0) }} \u2261{{end}}{{ if gt .Ahead 0 }} \u2191{{.Ahead}}{{end}}{{ if gt .Behind 0 }} \u2193{{.Behind}}{{end}} {{ if .Working.Changed }}\uf044{{ if gt (add .Working.Added .Working.Untracked) 0}} +{{ add .Working.Added .Working.Untracked }}{{end}}{{ if gt .Working.Modified 0}} ~{{ .Working.Modified }}{{end}}{{ if gt .Working.Deleted 0}} -{{ .Working.Deleted }}{{ end }}{{ end }}",
+                    "template": " {{ url .UpstreamIcon .UpstreamURL }}{{ .HEAD }}{{ if and (eq .Ahead 0) (eq .Behind 0) }} \u2261{{end}}{{ if gt .Ahead 0 }} \u2191{{.Ahead}}{{end}}{{ if gt .Behind 0 }} \u2193{{.Behind}}{{end}} {{ if .Working.Changed }}\uf044{{ if gt (add .Working.Added .Working.Untracked) 0}} +{{ add .Working.Added .Working.Untracked }}{{end}}{{ if gt .Working.Modified 0}} ~{{ .Working.Modified }}{{end}}{{ if gt .Working.Deleted 0}} -{{ .Working.Deleted }}{{ end }}{{ end }}",
                     "type": "git"
                 },
                 {
