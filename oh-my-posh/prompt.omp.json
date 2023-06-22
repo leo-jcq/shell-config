@@ -84,7 +84,7 @@
                         "always_enabled": true
                     },
                     "style": "diamond",
-                    "template": " \ufa1e {{ .FormattedMs }}\u2000\u2800",
+                    "template": " \ufa1e {{ .FormattedMs }} ",
                     "trailing_diamond": "\ue0b4",
                     "type": "executiontime"
                 }
